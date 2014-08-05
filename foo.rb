@@ -9,6 +9,11 @@ get '/' do
   msg
 end
 
+get '/env' do
+  puts "env='#{ENV.inspect}'"
+  ENV.inspect
+end
+
 get '/crash/:id' do
   Process.kill(9, params[:id].to_i)
 end
